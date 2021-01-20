@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ROBO-X</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .robo {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .robo model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-container {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            background: #edda73;
+            height: 40px;
+            width: 150px;
+            margin: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="robo">
+
+        <model-viewer id="model" src="RobotExpressive.glb" auto-rotate camera-controls skybox-image="stadium.hdr"
+            animation-name="Running" autoplay ar></model-viewer>
+        <div class="btn-container">
+            <button type="button" onclick="stop()">STOP</button>
+            <button type="button" onclick="run()">RUN</button>
+            <button type="button" onclick="wave()">WAVE</button>
+            <h3>
+                <a href="https://github.com/encryptedn00b" target="_blank"> encryptedn00b</a>     
+                   
+            </h3>
+           
+        </div>
+       
+
+
+    </div>
+
+    <script>
+        var modelViewer = document.getElementById('model');
+
+        function stop() {
+            modelViewer.animationName = 'none';
+        }
+        function run() {
+            modelViewer.animationName = 'Running';
+        }
+        function wave() {
+            modelViewer.animationName = 'Wave';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
